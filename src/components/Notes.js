@@ -5,6 +5,7 @@ import Note from "./Note";
 import './Notes.css';
 
 const requestURL = 'http://localhost:7070/notes';
+// const httpsURL = 'https://crud-backend-74v1.onrender.com';
 
 const Notes = ({ header }) => {
 
@@ -40,9 +41,10 @@ const Notes = ({ header }) => {
 	return (
 		<div className="notes-wrapper">
 			<Header header={header} onRefresh={onRefresh} />
+			{notes.lenght ?
 			<ul className="notes">
 				{notes.map((item) => (<Note key={item.id} note={item} onDelete={onDelete} />))}
-			</ul>
+			</ul> : null}
 			<FormNote onSubmit={onSubmit} />
 		</div>
 	)
