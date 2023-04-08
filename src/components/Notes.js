@@ -37,7 +37,6 @@ const Notes = ({ header }) => {
 		onRefresh();
 	}, []);
 
-
 	return (
 		<div className="notes-wrapper">
 			<Header header={header} onRefresh={onRefresh} />
