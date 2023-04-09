@@ -20,7 +20,7 @@ const FormNote = ({ onSubmit }) => {
 			const newNote = {
 				content: form.content
 			};
-
+			
 			onSubmit(newNote);
 			setForm({
 				content: ''

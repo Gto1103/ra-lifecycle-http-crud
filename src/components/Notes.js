@@ -26,6 +26,7 @@ const Notes = ({ header }) => {
 		})
       .then(response => response.status === 204 ? onRefresh() : console.log(`Status cod: ${response.status}. Status need to eaqual 204`))
       .catch((e) => console.log('Error: ' + e.message));
+		onRefresh();
 	};
 
 	const onDelete = (id) => {
@@ -41,8 +42,7 @@ const Notes = ({ header }) => {
 	return (
 		<div className="notes-wrapper">
 			<Header header={header} onRefresh={onRefresh} />
-			{notes.lenght ?
-			<ul className="notes">
+			{notes.length ? <ul className="notes">
 				{notes.map((item) => (<Note key={item.id} note={item} onDelete={onDelete} />))}
 			</ul> : null}
 			<FormNote onSubmit={onSubmit} />
